@@ -1,0 +1,105 @@
+{
+  "generated_from": "data/campus_customs_new.db and output/audit_trail.json after the reset at 2026-11-06T21:21:52Z",
+  "starting_checking_balance": 3400.0,
+  "ending_checking_balance": 152.0,
+  "tickets": [
+    {
+      "id": 101,
+      "final_status": "resolved",
+      "short_outcome": "Tee size S: invoice 501 paid, 1 tee restocked on PO 1 (arrives 2026-09-05), customer told honestly in draft 5.",
+      "agents": {
+        "boss": "Read the ticket, delegated to inventory, accounting and customer service, and across four runs held the ticket until the purchase order could be verified as ordered, then recorded the resolution.",
+        "inventory": "Confirmed 0 tees in size S (short 1), picked Bulldog Print Co (apparel reprint, 5-day lead), found invoice 501 open and 3 days overdue so it would not ship, and later confirmed PO 1 is ordered with arrival 2026-09-05.",
+        "accounting": "Prepared the $840 invoice-501 payment request (approval 2) and, once the vendor was unblocked, the $8 tee purchase order (PO 1, approval 3). Never paid anything itself.",
+        "facilities": "Not needed.",
+        "customer_service": "Saved customer drafts 1, 3, 4 and finally 5 for Tauhid Zaman, each honest about availability; draft 5 says the restock is ordered with expected arrival 2026-09-05 and is not confirmed shipped. None sent."
+      },
+      "human_approvals": [
+        {
+          "approval_id": 2,
+          "kind": "invoice",
+          "amount": 840.0,
+          "approved_by": "Elijah",
+          "paid_on": "2026-08-31",
+          "payment_id": 2
+        },
+        {
+          "approval_id": 3,
+          "kind": "purchase_order",
+          "amount": 8.0,
+          "approved_by": "Elijah",
+          "paid_on": "2026-08-31",
+          "payment_id": 3
+        }
+      ],
+      "cash_change": -848.0,
+      "drafts_saved_not_sent": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "purchase_orders": [
+        {
+          "id": 1,
+          "sku": "CC-TEE-WHITE",
+          "size": "S",
+          "qty": 1,
+          "total": 8.0,
+          "status": "ordered",
+          "expected_arrival": "2026-09-05"
+        }
+      ],
+      "agent_runs": 4,
+      "resolved_by": "boss"
+    },
+    {
+      "id": 102,
+      "final_status": "resolved",
+      "short_outcome": "Rent $2,400 paid; lease next due moved to 2026-10-02.",
+      "agents": {
+        "boss": "Delegated to facilities, then in the second run confirmed the rent was paid and resolved the ticket.",
+        "inventory": "Not needed.",
+        "accounting": "Checked cash and lease 1 and prepared the $2,400 rent payment request (approval 1). Never paid anything itself.",
+        "facilities": "Checked the lease against the landlord's email: $2,400 due 2026-09-02, 2 days away, not late; later confirmed the payment and the due date moving to 2026-10-02.",
+        "customer_service": "Not needed."
+      },
+      "human_approvals": [
+        {
+          "approval_id": 1,
+          "kind": "rent",
+          "amount": 2400.0,
+          "approved_by": "Elijah",
+          "paid_on": "2026-08-31",
+          "payment_id": 1
+        }
+      ],
+      "cash_change": -2400.0,
+      "drafts_saved_not_sent": [],
+      "purchase_orders": [],
+      "agent_runs": 2,
+      "resolved_by": "boss"
+    },
+    {
+      "id": 103,
+      "final_status": "resolved",
+      "short_outcome": "No payment. Counteroffer for the 8 hoodies in stock at $30 each; the 12-unit restock ($264) is not affordable.",
+      "agents": {
+        "boss": "Delegated to inventory, accounting and customer service; held the ticket blocked on a $112 funding gap twice, then, with the clearer rule, resolved it with an honest counteroffer.",
+        "inventory": "Confirmed 8 of 20 hoodies (size M) in stock, 12 short, vendor Bulldog Print Co with 5-day lead; restock would cost $264.",
+        "accounting": "Checked the margin on a $30 price (48.3% off list, $8 profit per unit, 26.7% margin, above the $22 cost) and showed the $264 restock does not fit the cash ($152). Created no request.",
+        "facilities": "Not needed.",
+        "customer_service": "Saved customer drafts 2 and 6 for Yale AI Club; draft 6 offers up to 8 hoodies at $30 without promising the other 12 or a date. Not sent."
+      },
+      "human_approvals": [],
+      "cash_change": -0.0,
+      "drafts_saved_not_sent": [
+        2,
+        6
+      ],
+      "purchase_orders": [],
+      "agent_runs": 3,
+      "resolved_by": "boss"
+    }
+  ]
+}
