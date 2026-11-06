@@ -156,4 +156,18 @@ Things that happened, and what I did:
 
 **What was lacking after the first prompt:** It didn't say how long or what format, so I used one tab with five numbered sections that mirror the five questions, a scorecard table per ticket and a plan-versus-actual table, so a grader can find each answer quickly. It also left open what counts as "evidence", so I cited the ticket tabs, the Cash tab and the audit-trail counts by name.
 
+## Problem 11: Submit to GitHub
+
+**Prompt:**
+> submit to GitHub: push your code to a public github repository so graders can clone it. Submit the repo url to canvas, and also put it in output/github_url.txt. do not push your real .env to GitHub repo. Do include both database files under data/ (the original and your working copy) so graders can run your app easily. Expected file layout is attached. README should explain: copy original DB to the working copy when you need a clean run, start the MCP server, start the fastapi backend, start the react board, reset the DB before a full three-ticket run. [expected file layout attached as an image]
+
+**Follow-up prompt:** None needed from the user. I handled these myself:
+1. The attached layout names the MCP server file `mcp_server/server.py`; mine was `mcp_server.py`. I renamed it and fixed every reference (`.mcp.json`, the backend config, docs), then re-checked that `claude mcp list` shows it connected and the backend still starts and serves the board data. I also noted the rename inside `mcp_smoke.json`, since that test ran under the old name, and removed a duplicate `mcp_server/requirements.txt` so the folder matches the layout.
+2. My old `.gitignore` excluded `data/` and `*.db`, which would have kept both databases out. I changed it to commit them (and `data.zip` stays out), while still ignoring `.env`, `.venv` and `node_modules`.
+3. Before the first commit I checked what was staged: no `.env`, no `.venv`, no `node_modules`, no logs, and I searched every file for the Portkey key and for key-shaped strings (none found). I also confirmed `data/campus_customs.db` is byte-identical to the one in the original `data.zip`.
+4. The working copy I committed is the end state of the real run (all three tickets resolved, checking $152.00), so the committed data matches `resolved_tickets.json`. The README tells graders to copy the original over it before a fresh run.
+5. After pushing, I cloned the public repo into a scratch folder and checked the files, both databases, the ticket states and that no `.env` came along.
+
+**What was lacking after the first prompt:** It didn't say what repository name to use (I used `hw5` under the same GitHub account as HW4, `ebryce1`), whether the working copy should be committed in its used or reset state (I committed the used state so the evidence matches, and said how to reset), or that the Canvas submission is a step only the user can do.
+
 <!-- Add one section per problem below: number and title, at least one prompt in my own words, one follow-up if needed, and one sentence on what the first prompt lacked. -->
