@@ -170,4 +170,17 @@ Things that happened, and what I did:
 
 **What was lacking after the first prompt:** It didn't say what repository name to use (I used `hw5` under the same GitHub account as HW4, `ebryce1`), whether the working copy should be committed in its used or reset state (I committed the used state so the evidence matches, and said how to reset), or that the Canvas submission is a step only the user can do.
 
+### Follow-up: grading pass
+
+**Prompt:**
+> ok thats the homework. Here is what I am turning in https://github.com/ebryce1/hw5. This is the link to the homework. Grade me, like we did for HW4 [followed by the assignment's URL].
+
+**Follow-up prompt:** None needed from the user. I read all eleven problem pages for the requirements and point values, cloned the public repo fresh and checked every deliverable against its problem, ran the MCP server, the backend (with a reset) and the front-end build from the clone, and fixed what I found:
+1. `mcp_smoke.json` showed invoice 501 "open" and the lease due 2026-09-02, but the committed working copy is in its used state (invoice paid, due 2026-10-02), so a grader comparing the two would see a mismatch. I confirmed the three outputs match a fresh copy of the original exactly, and added a note saying so and how to reproduce.
+2. `design.md` ran about 1,060 words (HW4 lost a point for being long), so I cut it to the required parts: layout, how the agents differ, how resolved tickets and cash show, and why.
+3. The reflection did not have a plain "human approvals for each ticket" part that the Problem 10 page expects, so I added a table with the approval ids, amounts, approver and effect for 101, 102 and 103.
+4. The model name `gpt-6-luna-global` appears in the audit trail because the gateway reports it that way; I explained it in the README so it is not mistaken for a different model.
+
+**What was lacking after the first prompt:** It didn't say whether Canvas also wants a `hw5.zip` (the Problem 11 page mentions one), so I asked rather than guessed.
+
 <!-- Add one section per problem below: number and title, at least one prompt in my own words, one follow-up if needed, and one sentence on what the first prompt lacked. -->

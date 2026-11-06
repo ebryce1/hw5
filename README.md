@@ -8,7 +8,8 @@ ticket board, built from three pieces that talk to each other:
 3. a **React dashboard** (`frontend/`), the "Hollow Oak", where a human watches the agents and stamps
    (approves) payments.
 
-Every agent uses one model, **`gpt-6-luna`**, through Portkey. Nothing is paid without a human's approval,
+Every agent uses one model, **`gpt-6-luna`**, through Portkey. (The Portkey gateway reports the model it served as `gpt-6-luna-global`; that name appears in
+`output/audit_trail.json` and is the same model, not a different one. The code only ever asks for `gpt-6-luna`.) Nothing is paid without a human's approval,
 cash only goes out and can never go negative, and messages are drafts only (nothing is emailed or sent).
 
 ## What you need

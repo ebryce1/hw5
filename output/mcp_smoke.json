@@ -2,6 +2,7 @@
   "description": "Smoke test of the 3 MCP tools, called through the vibe coder (Claude Code) connected to the campus-customs server defined in .mcp.json. Values were then checked against data/campus_customs_new.db with sqlite3.",
   "server": "campus-customs (./.venv/bin/python mcp_server/server.py, stdio; the file was named mcp_server.py when this smoke test was run and was renamed server.py in Problem 11 to match the required layout)",
   "database": "data/campus_customs_new.db",
+  "database_state_when_recorded": "Recorded on a clean database: data/campus_customs_new.db freshly copied from data/campus_customs.db (invoice 501 open, lease 1 next due 2026-09-02, checking $3,400). The working copy committed in this repo was used later for the full three-ticket run (invoice 501 paid, lease 1 next due 2026-10-02, checking $152), so these three outputs match the ORIGINAL values. To reproduce them, run: cp data/campus_customs.db data/campus_customs_new.db and call the three tools again. (Checked in the grading pass: all three outputs match exactly against a fresh copy of the original database.)",
   "today_per_desk": "2026-08-31",
   "tests": [
     {
